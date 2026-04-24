@@ -1,0 +1,1170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unwritten Worship — Release the Gospel Song God Placed in Your Heart</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #C9973A;
+    --gold-light: #E8C06A;
+    --gold-pale: #F5E6C8;
+    --deep: #0E0A04;
+    --ink: #1A1208;
+    --warm: #2C1F0A;
+    --cream: #FAF6EE;
+    --cream-dark: #F0E8D6;
+    --text: #3A2A10;
+    --muted: #7A6040;
+    --white: #FFFDF8;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--cream);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* ── HERO ─────────────────────────────────────────── */
+  .hero {
+    min-height: 100vh;
+    background: var(--deep);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 80px 24px 60px;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: 
+      radial-gradient(ellipse 80% 60% at 50% 30%, rgba(201,151,58,0.18) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 40% at 80% 80%, rgba(201,151,58,0.08) 0%, transparent 60%);
+  }
+
+  .hero-noise {
+    position: absolute;
+    inset: 0;
+    opacity: 0.035;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size: 256px;
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(201,151,58,0.15);
+    border: 1px solid rgba(201,151,58,0.35);
+    color: var(--gold-light);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 7px 18px;
+    border-radius: 40px;
+    margin-bottom: 32px;
+    position: relative;
+    z-index: 2;
+    animation: fadeUp 0.8s ease both;
+  }
+
+  .badge::before {
+    content: '✦';
+    font-size: 9px;
+    color: var(--gold);
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(42px, 7vw, 82px);
+    font-weight: 900;
+    color: var(--white);
+    text-align: center;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    max-width: 860px;
+    position: relative;
+    z-index: 2;
+    animation: fadeUp 0.9s 0.1s ease both;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--gold-light);
+  }
+
+  .hero-sub {
+    font-family: 'Lora', serif;
+    font-size: clamp(17px, 2.5vw, 22px);
+    color: rgba(255,253,248,0.65);
+    text-align: center;
+    max-width: 580px;
+    margin-top: 24px;
+    line-height: 1.7;
+    position: relative;
+    z-index: 2;
+    animation: fadeUp 1s 0.2s ease both;
+  }
+
+  .hero-cta-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    margin-top: 48px;
+    position: relative;
+    z-index: 2;
+    animation: fadeUp 1s 0.35s ease both;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, var(--gold) 0%, #B8862E 100%);
+    color: var(--deep);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 18px 44px;
+    border-radius: 6px;
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    box-shadow: 0 8px 32px rgba(201,151,58,0.4), 0 2px 8px rgba(0,0,0,0.3);
+    transition: all 0.25s ease;
+    border: none;
+    cursor: pointer;
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 48px rgba(201,151,58,0.55), 0 4px 12px rgba(0,0,0,0.3);
+  }
+
+  .hero-proof {
+    font-size: 13px;
+    color: rgba(255,253,248,0.4);
+    letter-spacing: 0.03em;
+  }
+
+  .hero-scroll {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    z-index: 2;
+    animation: fadeUp 1s 0.7s ease both;
+  }
+
+  .scroll-line {
+    width: 1px;
+    height: 48px;
+    background: linear-gradient(to bottom, rgba(201,151,58,0.6), transparent);
+    animation: scrollPulse 2s ease-in-out infinite;
+  }
+
+  /* ── PAIN SECTION ─────────────────────────────────── */
+  .pain {
+    background: var(--ink);
+    padding: 100px 24px;
+    position: relative;
+  }
+
+  .pain::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(201,151,58,0.3), transparent);
+  }
+
+  .pain-inner {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .section-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .pain h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(30px, 5vw, 52px);
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.15;
+    margin-bottom: 40px;
+  }
+
+  .pain-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    text-align: left;
+    margin-bottom: 48px;
+  }
+
+  .pain-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    color: rgba(255,253,248,0.75);
+    font-size: 17px;
+    line-height: 1.6;
+    font-family: 'Lora', serif;
+  }
+
+  .pain-list li:first-child { border-top: 1px solid rgba(255,255,255,0.06); }
+
+  .pain-icon {
+    font-size: 20px;
+    flex-shrink: 0;
+    margin-top: 2px;
+    opacity: 0.7;
+  }
+
+  .pain-close {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(20px, 3vw, 28px);
+    font-style: italic;
+    color: var(--gold-light);
+    line-height: 1.5;
+  }
+
+  /* ── PROMISE ──────────────────────────────────────── */
+  .promise {
+    background: var(--cream);
+    padding: 100px 24px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .promise::before {
+    content: '"';
+    position: absolute;
+    top: -40px;
+    left: -20px;
+    font-family: 'Playfair Display', serif;
+    font-size: 400px;
+    color: rgba(201,151,58,0.07);
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  .promise-inner {
+    max-width: 760px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .promise h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 4.5vw, 50px);
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.2;
+    margin-bottom: 28px;
+  }
+
+  .promise h2 span {
+    color: var(--gold);
+  }
+
+  .promise p {
+    font-size: 18px;
+    font-family: 'Lora', serif;
+    color: var(--muted);
+    line-height: 1.85;
+    margin-bottom: 20px;
+  }
+
+  /* ── WHAT'S INSIDE ────────────────────────────────── */
+  .contents {
+    background: var(--warm);
+    padding: 100px 24px;
+  }
+
+  .contents-inner {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .contents-header {
+    text-align: center;
+    margin-bottom: 64px;
+  }
+
+  .contents-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 4.5vw, 48px);
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.2;
+    margin-bottom: 16px;
+  }
+
+  .contents-header p {
+    color: rgba(255,253,248,0.55);
+    font-size: 16px;
+    font-family: 'Lora', serif;
+    font-style: italic;
+  }
+
+  .chapters {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 2px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(201,151,58,0.15);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .chapter-card {
+    background: rgba(14,10,4,0.5);
+    padding: 28px 24px;
+    transition: background 0.2s ease;
+    cursor: default;
+  }
+
+  .chapter-card:hover {
+    background: rgba(201,151,58,0.08);
+  }
+
+  .ch-num {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  .ch-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 10px;
+    line-height: 1.3;
+  }
+
+  .ch-desc {
+    font-size: 13.5px;
+    color: rgba(255,253,248,0.5);
+    line-height: 1.65;
+  }
+
+  /* ── FOR WHO ──────────────────────────────────────── */
+  .forwho {
+    background: var(--cream-dark);
+    padding: 100px 24px;
+  }
+
+  .forwho-inner {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .forwho h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 4.5vw, 48px);
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.2;
+    margin-bottom: 48px;
+  }
+
+  .who-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 16px;
+    text-align: left;
+    margin-bottom: 56px;
+  }
+
+  .who-card {
+    background: var(--white);
+    border: 1px solid rgba(201,151,58,0.2);
+    border-radius: 10px;
+    padding: 24px 20px;
+  }
+
+  .who-emoji {
+    font-size: 28px;
+    margin-bottom: 12px;
+    display: block;
+  }
+
+  .who-card p {
+    font-size: 14.5px;
+    line-height: 1.6;
+    color: var(--text);
+    font-family: 'Lora', serif;
+  }
+
+  .forwho-note {
+    font-size: 17px;
+    font-family: 'Lora', serif;
+    font-style: italic;
+    color: var(--muted);
+    line-height: 1.7;
+    max-width: 580px;
+    margin: 0 auto;
+  }
+
+  /* ── AUTHOR ───────────────────────────────────────── */
+  .author {
+    background: var(--ink);
+    padding: 100px 24px;
+    position: relative;
+  }
+
+  .author::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 60% 60% at 80% 50%, rgba(201,151,58,0.06) 0%, transparent 70%);
+  }
+
+  .author-inner {
+    max-width: 820px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 56px;
+    align-items: start;
+    position: relative;
+    z-index: 1;
+  }
+
+  .author-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--gold) 0%, #7A5020 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    font-weight: 900;
+    color: var(--deep);
+    flex-shrink: 0;
+    border: 3px solid rgba(201,151,58,0.4);
+    box-shadow: 0 0 40px rgba(201,151,58,0.2);
+  }
+
+  .author-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+    display: block;
+  }
+
+  .author h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 4px;
+  }
+
+  .author-role {
+    font-size: 14px;
+    color: rgba(255,253,248,0.45);
+    margin-bottom: 24px;
+    font-style: italic;
+    font-family: 'Lora', serif;
+  }
+
+  .author p {
+    font-size: 16px;
+    color: rgba(255,253,248,0.68);
+    line-height: 1.8;
+    font-family: 'Lora', serif;
+    margin-bottom: 16px;
+  }
+
+  .author-quote {
+    border-left: 3px solid var(--gold);
+    padding-left: 20px;
+    margin-top: 24px;
+  }
+
+  .author-quote p {
+    font-style: italic;
+    color: var(--gold-light) !important;
+    font-size: 17px !important;
+  }
+
+  /* ── TESTIMONIAL / QUOTE ──────────────────────────── */
+  .quote-strip {
+    background: linear-gradient(135deg, var(--gold) 0%, #A07028 100%);
+    padding: 64px 24px;
+    text-align: center;
+  }
+
+  .quote-strip blockquote {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(22px, 4vw, 38px);
+    font-weight: 700;
+    font-style: italic;
+    color: var(--deep);
+    max-width: 820px;
+    margin: 0 auto;
+    line-height: 1.35;
+  }
+
+  .quote-strip cite {
+    display: block;
+    margin-top: 20px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(14,10,4,0.55);
+  }
+
+  /* ── WHAT YOU'LL ACHIEVE ──────────────────────────── */
+  .outcomes {
+    background: var(--cream);
+    padding: 100px 24px;
+  }
+
+  .outcomes-inner {
+    max-width: 840px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .outcomes h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 4.5vw, 48px);
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 56px;
+    line-height: 1.2;
+  }
+
+  .outcomes-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    text-align: left;
+  }
+
+  .outcomes-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    background: var(--white);
+    border: 1px solid rgba(201,151,58,0.2);
+    border-radius: 10px;
+    padding: 20px 18px;
+    font-size: 15.5px;
+    line-height: 1.6;
+    color: var(--text);
+    font-family: 'Lora', serif;
+  }
+
+  .check {
+    width: 22px;
+    height: 22px;
+    background: linear-gradient(135deg, var(--gold), #A07028);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 12px;
+    color: var(--deep);
+    margin-top: 1px;
+    font-weight: 700;
+  }
+
+  /* ── OFFER / BUY ──────────────────────────────────── */
+  .offer {
+    background: var(--deep);
+    padding: 100px 24px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .offer::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: 
+      radial-gradient(ellipse 70% 50% at 50% 0%, rgba(201,151,58,0.12) 0%, transparent 60%),
+      radial-gradient(ellipse 40% 40% at 100% 100%, rgba(201,151,58,0.06) 0%, transparent 60%);
+  }
+
+  .offer-inner {
+    max-width: 620px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .offer-box {
+    background: rgba(255,253,248,0.04);
+    border: 1px solid rgba(201,151,58,0.3);
+    border-radius: 16px;
+    padding: 56px 48px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .offer-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(to right, transparent, var(--gold), transparent);
+  }
+
+  .offer-box h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(26px, 4vw, 40px);
+    font-weight: 900;
+    color: var(--white);
+    margin-bottom: 16px;
+    line-height: 1.2;
+  }
+
+  .offer-box h2 em {
+    font-style: italic;
+    color: var(--gold-light);
+  }
+
+  .offer-box .subtitle {
+    color: rgba(255,253,248,0.55);
+    font-size: 16px;
+    margin-bottom: 40px;
+    font-family: 'Lora', serif;
+    font-style: italic;
+    line-height: 1.6;
+  }
+
+  .offer-features {
+    list-style: none;
+    margin: 32px 0 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    text-align: left;
+  }
+
+  .offer-features li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14.5px;
+    color: rgba(255,253,248,0.7);
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+
+  .offer-features li:last-child { border-bottom: none; }
+
+  .offer-features .dot {
+    width: 6px;
+    height: 6px;
+    background: var(--gold);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .offer-guarantee {
+    margin-top: 28px;
+    font-size: 13px;
+    color: rgba(255,253,248,0.35);
+    line-height: 1.6;
+    font-family: 'Lora', serif;
+    font-style: italic;
+  }
+
+  /* ── URGENCY / FINAL PUSH ─────────────────────────── */
+  .urgency {
+    background: var(--cream-dark);
+    padding: 80px 24px;
+    text-align: center;
+  }
+
+  .urgency-inner {
+    max-width: 620px;
+    margin: 0 auto;
+  }
+
+  .urgency h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(26px, 4vw, 40px);
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.25;
+    margin-bottom: 20px;
+  }
+
+  .urgency p {
+    font-size: 17px;
+    font-family: 'Lora', serif;
+    color: var(--muted);
+    line-height: 1.8;
+    margin-bottom: 36px;
+  }
+
+  /* ── FOOTER ───────────────────────────────────────── */
+  footer {
+    background: var(--deep);
+    padding: 40px 24px;
+    text-align: center;
+    border-top: 1px solid rgba(201,151,58,0.1);
+  }
+
+  footer p {
+    font-size: 13px;
+    color: rgba(255,253,248,0.25);
+    line-height: 1.8;
+  }
+
+  footer a {
+    color: rgba(201,151,58,0.5);
+    text-decoration: none;
+  }
+
+  /* ── STICKY CTA ───────────────────────────────────── */
+  .sticky-cta {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: rgba(14,10,4,0.95);
+    backdrop-filter: blur(12px);
+    border-top: 1px solid rgba(201,151,58,0.2);
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    transform: translateY(100%);
+    transition: transform 0.4s ease;
+  }
+
+  .sticky-cta.visible { transform: translateY(0); }
+
+  .sticky-cta p {
+    font-size: 14px;
+    color: rgba(255,253,248,0.65);
+    line-height: 1.4;
+    flex: 1;
+  }
+
+  .sticky-cta strong {
+    display: block;
+    font-size: 16px;
+    color: var(--white);
+    font-weight: 600;
+  }
+
+  .btn-sm {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, var(--gold), #A07028);
+    color: var(--deep);
+    font-size: 14px;
+    font-weight: 700;
+    padding: 13px 28px;
+    border-radius: 6px;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: all 0.2s;
+    border: none;
+    cursor: pointer;
+  }
+
+  .btn-sm:hover { transform: translateY(-1px); }
+
+  /* ── DIVIDER ──────────────────────────────────────── */
+  .divider {
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(201,151,58,0.25), transparent);
+  }
+
+  /* ── RESPONSIVE ───────────────────────────────────── */
+  @media (max-width: 640px) {
+    .author-inner { grid-template-columns: 1fr; }
+    .author-avatar { width: 90px; height: 90px; font-size: 32px; }
+    .offer-box { padding: 40px 28px; }
+    .sticky-cta p { display: none; }
+  }
+
+  /* ── ANIMATIONS ───────────────────────────────────── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes scrollPulse {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-noise"></div>
+  <span class="badge">A Practical Guide for Gospel Songwriters Across Africa</span>
+  <h1>The Song God Placed in You<br><em>Was Not Placed There by Accident.</em></h1>
+  <p class="hero-sub">A complete, step-by-step guide to finishing and releasing the gospel song that has been waiting inside your heart — even if you have no music training.</p>
+  <div class="hero-cta-group">
+    <a href="#offer" class="btn-primary">
+      Get Unwritten Worship →
+    </a>
+    <span class="hero-proof">Crafted specifically for gospel believers across Africa</span>
+  </div>
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- PAIN -->
+<section class="pain">
+  <div class="pain-inner reveal">
+    <span class="section-label">Does This Sound Like You?</span>
+    <h2>You Have a Song Inside You.<br>And It's Still Unfinished.</h2>
+    <ul class="pain-list">
+      <li>
+        <span class="pain-icon">📓</span>
+        <span>You have a notebook full of lyric fragments, but none of them have ever become a complete song.</span>
+      </li>
+      <li>
+        <span class="pain-icon">🎵</span>
+        <span>You have a beautiful melody living in your head for months — but no idea how to put words to it, or music around it.</span>
+      </li>
+      <li>
+        <span class="pain-icon">🎤</span>
+        <span>You sing in your choir, you lead worship, you write — but you feel like nobody has ever shown you the real process for finishing a song.</span>
+      </li>
+      <li>
+        <span class="pain-icon">📱</span>
+        <span>You have voice memos from two years ago that have never gone anywhere — and every time you listen back, you feel the weight of something unfinished.</span>
+      </li>
+      <li>
+        <span class="pain-icon">😟</span>
+        <span>You feel called to write gospel music. But nobody taught you how. So the songs stay inside you — and the people who need them never hear them.</span>
+      </li>
+    </ul>
+    <p class="pain-close">"The song God placed in your heart was not placed there by accident. It was placed there for the people who need to hear it."</p>
+  </div>
+</section>
+
+<!-- PROMISE -->
+<section class="promise">
+  <div class="promise-inner reveal">
+    <span class="section-label">The Solution</span>
+    <h2>What If You Had a Complete, Practical Guide — Built Specifically for <span>West African Gospel Songwriters?</span></h2>
+    <p>Not a Western music theory textbook. Not a generic creativity course. A guide written from the ground up for believers across Africa — one that understands how church music actually works here, what the African gospel sound is, how your mother tongue belongs in your song, and what it takes to protect your work when it starts to spread.</p>
+    <p>That is exactly what <strong>Unwritten Worship</strong> is. Every chapter solves one specific problem you are facing right now. By the time you finish, you will not just have knowledge — you will have a finished, recorded, legally protected gospel song ready to share with the world.</p>
+  </div>
+</section>
+
+<!-- QUOTE STRIP -->
+<div class="quote-strip">
+  <blockquote>
+    "Any songwriter can write religious words. Only a craftsman can write words that minister."
+  </blockquote>
+  <cite>— Choir director, Kumasi · From inside Unwritten Worship</cite>
+</div>
+
+<!-- WHAT'S INSIDE -->
+<section class="contents">
+  <div class="contents-inner reveal">
+    <div class="contents-header">
+      <span class="section-label" style="color: var(--gold-light);">Everything Inside the Guide</span>
+      <h2>Nine Chapters. One Complete Journey.<br>From First Spark to Final Release.</h2>
+      <p>Every chapter ends with a practical exercise that builds your actual song.</p>
+    </div>
+    <div class="chapters">
+      <div class="chapter-card">
+        <span class="ch-num">Chapter One</span>
+        <p class="ch-title">What Is Your Message?</p>
+        <p class="ch-desc">How to find the one specific truth your song must deliver — and why "about God" is not a message.</p>
+      </div>
+      <div class="chapter-card">
+        <span class="ch-num">Chapter Two</span>
+        <p class="ch-title">The Blueprint of a Gospel Song</p>
+        <p class="ch-desc">Verse, chorus, bridge, vamp — what each section does and the three structures every West African songwriter should know.</p>
+      </div>
+      <div class="chapter-card">
+        <span class="ch-num">Chapter Three</span>
+        <p class="ch-title">Writing Lyrics That Actually Minister</p>
+        <p class="ch-desc">Seven techniques for writing words that make people weep in recognition — not just agree with politely.</p>
+      </div>
+      <div class="chapter-card">
+        <span class="ch-num">Chapter Four</span>
+        <p class="ch-title">The African Gospel Sound</p>
+        <p class="ch-desc">Highlife, Afrogospel, Ghanaian worship, praise &amp; worship — how to write music that sounds like where you come from.</p>
+      </div>
+      <div class="chapter-card">
+        <span class="ch-num">Chapter Five</span>
+        <p class="ch-title">Melody, Chords &amp; the Music</p>
+        <p class="ch-desc">How to find a melody even if you cannot read music notation — and the four chord progressions that power gospel music.</p>
+      </div>
+      <div class="chapter-card">
+        <span class="ch-num">Chapter Six</span>
+        <p class="ch-title">From Inspiration to Finished Song</p>
+        <p class="ch-desc">The six-step process that takes any fragment, feeling, or half-finished verse and turns it into a complete, revised song.</p>
+      </div>
+      <div class="chapter-card">
+        <span class="ch-num">Chapter Seven</span>
+        <p class="ch-title">Introducing Your Song to the Church</p>
+        <p class="ch-desc">How to present your song to your music director, teach it to your choir, and bring it into your congregation the right way.</p>
+      </div>
+      <div class="chapter-card">
+        <span class="ch-num">Chapter Eight</span>
+        <p class="ch-title">Sharing Your Song With the World</p>
+        <p class="ch-desc">A complete release plan covering YouTube, Boomplay, Spotify, WhatsApp, and TikTok — from zero audience to your first listeners.</p>
+      </div>
+      <div class="chapter-card">
+        <span class="ch-num">Chapter Nine</span>
+        <p class="ch-title">Protecting Your Song</p>
+        <p class="ch-desc">Copyright, royalties, COSON and GHAMRO registration — everything you need so nobody can take what God gave you.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BONUS APPENDICES -->
+<section class="outcomes">
+  <div class="outcomes-inner reveal">
+    <span class="section-label">Also Included</span>
+    <h2>Five Powerful Bonuses — Included Free</h2>
+    <ul class="outcomes-list">
+      <li>
+        <span class="check">✦</span>
+        <span><strong>The Song Worksheet</strong> — A one-page template to complete before writing any lyric. Use it for every song you write for the rest of your life.</span>
+      </li>
+      <li>
+        <span class="check">✦</span>
+        <span><strong>Scripture Seeds</strong> — 30+ Bible references organised by gospel theme — Faithfulness, Restoration, Worship, Identity, and more — to spark your next message.</span>
+      </li>
+      <li>
+        <span class="check">✦</span>
+        <span><strong>COSON &amp; GHAMRO Step-by-Step</strong> — Exactly what to bring, where to go, and what to say to register your songs and start collecting royalties.</span>
+      </li>
+      <li>
+        <span class="check">✦</span>
+        <span><strong>The West African Gospel Listening List</strong> — Songs from Sinach, Nathaniel Bassey, Diana Hamilton, Moses Bliss and more — studied as craft, not just enjoyed as music.</span>
+      </li>
+      <li>
+        <span class="check">✦</span>
+        <span><strong>The 7-Day Songwriting Challenge</strong> — A day-by-day challenge that takes you from blank page to a finished, recorded, protected gospel song in one week.</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- FOR WHO -->
+<section class="forwho">
+  <div class="forwho-inner reveal">
+    <span class="section-label">Who This Guide Is For</span>
+    <h2>This Guide Was Written for You If…</h2>
+    <div class="who-grid">
+      <div class="who-card">
+        <span class="who-emoji">🙏</span>
+        <p>You are a choir member who writes songs during breaks but has never finished one.</p>
+      </div>
+      <div class="who-card">
+        <span class="who-emoji">🎶</span>
+        <p>You are a worship leader who hums melodies while driving but does not know how to build them into songs.</p>
+      </div>
+      <div class="who-card">
+        <span class="who-emoji">📖</span>
+        <p>You are a student with a notebook full of unfinished verses that have been waiting for a process.</p>
+      </div>
+      <div class="who-card">
+        <span class="who-emoji">⛪</span>
+        <p>You are a pastor or minister who feels called to contribute creatively to gospel music.</p>
+      </div>
+      <div class="who-card">
+        <span class="who-emoji">🕊️</span>
+        <p>You are a believer who has been carrying the same chorus for twenty years and has never known what to do with it.</p>
+      </div>
+      <div class="who-card">
+        <span class="who-emoji">🌍</span>
+        <p>You are an African gospel songwriter who wants to release music but needs guidance on the full process — from first idea to the world's ears.</p>
+      </div>
+    </div>
+    <p class="forwho-note">You do not need formal music training. You do not need to read notation. You do not need to play an instrument. You need a genuine experience of God — and the willingness to learn the craft that will let you share it.</p>
+  </div>
+</section>
+
+<!-- AUTHOR -->
+<section class="author">
+  <div class="author-inner reveal">
+    <div class="author-avatar">JF</div>
+    <div>
+      <span class="author-label">About the Author</span>
+      <h3>Jolly Felix</h3>
+      <p class="author-role">Gospel Songwriter · Founder, Flame Crew Family · Mentor of Ministers · Edo State, Nigeria</p>
+      <p>Jolly Felix is one of Edo State's most distinctive voices in contemporary gospel music — a songwriter, worship architect, and spiritual father whose work has shaped the gospel sound of Nigeria's South-South region and beyond.</p>
+      <p>He is the founder of <strong style="color: rgba(255,253,248,0.85);">Flame Crew Family</strong>, a gospel music ministry community whose members are now leading worship across Nigeria and releasing music that ministers to thousands. His recordings — including <em>When Others Are Sleeping</em> and <em>Always on My Mind</em> — are available on Boomplay, Spotify, Apple Music, and YouTube.</p>
+      <p>He has sat across from too many gifted believers who carried unwritten songs to their graves, defeated not by lack of talent but by lack of guidance. This guide is his answer to that loss.</p>
+      <div class="author-quote">
+        <p>"The song God placed in you is not for you alone. Finish it. Release it. The people who need it are already waiting."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OFFER / BUY -->
+<section class="offer" id="offer">
+  <div class="offer-inner reveal">
+    <span class="section-label" style="color: var(--gold-light);">Get the Guide Today</span>
+    <div class="offer-box">
+      <h2>Unwritten Worship:<br><em>The Complete Guide</em></h2>
+      <p class="subtitle">Everything you need to write, finish, record, release, and legally protect the gospel song God placed in your heart.</p>
+
+      <ul class="offer-features">
+        <li><span class="dot"></span> All 9 chapters — from message to legal protection</li>
+        <li><span class="dot"></span> 5 bonus appendices including the 7-Day Challenge</li>
+        <li><span class="dot"></span> COSON &amp; GHAMRO step-by-step registration guide</li>
+        <li><span class="dot"></span> The Song Worksheet — printable, reusable for every song</li>
+        <li><span class="dot"></span> West African Gospel Listening List with study guidance</li>
+        <li><span class="dot"></span> Scripture Seeds — 30+ themed Bible references</li>
+        <li><span class="dot"></span> Instant PDF download — start reading in minutes</li>
+      </ul>
+
+      <a href="#" class="btn-primary" style="width: 100%; justify-content: center; font-size: 17px; padding: 20px;">
+        Get Instant Access →
+      </a>
+
+      <p class="offer-guarantee">The song is already inside you. This guide simply helps you release it. If you do the work, your song will be finished before this guide ends.</p>
+    </div>
+  </div>
+</section>
+
+<!-- URGENCY -->
+<section class="urgency">
+  <div class="urgency-inner reveal">
+    <h2>Somewhere, Someone Is Waiting<br>to Hear Your Song.</h2>
+    <p>They do not know they are waiting. But the moment they hear it — the specific, personal, West African, God-breathed song that only you can write — they will recognise it. They will feel it. They will weep, or dance, or finally exhale. And that moment is only possible if you write the song. And finish it. And release it.</p>
+    <a href="#offer" class="btn-primary" style="font-size: 16px;">
+      Start Writing Your Song Today →
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>
+    <strong style="color: rgba(255,253,248,0.5);">Unwritten Worship</strong> · by Jolly Felix · Edo State, Nigeria<br>
+    A guide for gospel songwriters across Africa.
+  </p>
+</footer>
+
+<!-- STICKY CTA -->
+<div class="sticky-cta" id="stickyCta">
+  <div>
+    <strong>Unwritten Worship</strong>
+    <p>The complete gospel songwriting guide</p>
+  </div>
+  <a href="#offer" class="btn-sm">Get Instant Access →</a>
+</div>
+
+<script>
+  // Reveal on scroll
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(r => observer.observe(r));
+
+  // Sticky CTA
+  const stickyCta = document.getElementById('stickyCta');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > window.innerHeight * 0.6) {
+      stickyCta.classList.add('visible');
+    } else {
+      stickyCta.classList.remove('visible');
+    }
+  });
+
+  // Smooth anchor
+  document.querySelectorAll('a[href="#offer"]').forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      document.getElementById('offer').scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+</script>
+</body>
+</html>
